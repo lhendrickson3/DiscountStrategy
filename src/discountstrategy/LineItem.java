@@ -61,7 +61,7 @@ public class LineItem {
     
 /**
  * method to getProductName
- * returns 
+ * returns product name
  */
     public String getProductName(){
         return product.getProductName();

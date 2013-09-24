@@ -34,7 +34,8 @@ public class Product {
     }
 
 /**
- * method to getDicountAmt (pass qty) 
+ * method to getDicountAmt (pass qty)
+ * returns unit cost with discount applied * quantity
  */
     public double getDiscountAmt(int qty){
         return discount.getDiscountAmt(unitCost, qty);
@@ -42,6 +43,7 @@ public class Product {
 
 /**
  * method to getProductId
+ * returns product ID
  */
     public String getProductId() {
         return productId;
@@ -60,6 +62,7 @@ public class Product {
     
 /**
  * method to getProductName
+ * return product name
  */
     public String getProductName() {
         return productName;
@@ -78,6 +81,7 @@ public class Product {
 
 /**
  * method to getUnitCost
+ * returns unit cost
  */
     public double getUnitCost() {
         return unitCost;

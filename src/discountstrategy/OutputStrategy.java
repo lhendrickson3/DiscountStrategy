@@ -2,7 +2,7 @@ package discountstrategy;
 
 /**
  *
- * @author User
+ * @author lhendrickson
  */
 public interface OutputStrategy {
     

@@ -17,6 +17,7 @@ public class QuantityDiscount implements DiscountStrategy{
 
 /**
  * method getDiscountRate
+ * return discount rate
  */
     public double getDiscountRate() {
         return discountRate;
@@ -31,6 +32,7 @@ public class QuantityDiscount implements DiscountStrategy{
     
 /**
  * method to getMinimumQty
+ * returns minimum quantity needed to get discount
  */
     public int getMinimumQty() {
         return minimumQty;
@@ -45,6 +47,10 @@ public class QuantityDiscount implements DiscountStrategy{
  
 /**
  * method to getDiscountAmt
+ * if quantity is less than minimum quantity needed to get discount
+ * return unit cost * quantity
+ * else
+ * return unit cost with discount applied * quantity
  */
     public double getDiscountAmt(double unitCost, int qty) {
         if (qty < minimumQty) {

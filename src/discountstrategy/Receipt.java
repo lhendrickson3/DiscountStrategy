@@ -37,6 +37,7 @@ public class Receipt {
 
 /**
  * locate customer by locating ID match using findCustomer
+ * returns customer
  */
     private Customer lookupCustomerById(String customerId) {
         customer = db.findCustomer(customerId);
@@ -64,6 +65,7 @@ public class Receipt {
 /**
  * cycles through LineItem array and gathers the total price before discounts 
  * are added
+ * returns grand total before discounts are applied
  */
      public double getTotalBeforeDiscount() {
         double grandTotal = ZERO_ZERO;
@@ -76,6 +78,7 @@ public class Receipt {
 /**
  * cycles through LineItem array and gathers the total price after discounts
  * are applied
+ * returns total after discounts are applied
  */
      public double getTotalAfterDiscount() {
         double grandDiscountTotal = ZERO_ZERO;
@@ -86,7 +89,8 @@ public class Receipt {
     }
      
 /**
- * calculates amount saved 
+ * calculates amount saved
+ * returns amount saved by applying discounts
  */
      public double getSavings() {
          double savings = ZERO_ZERO;
@@ -96,6 +100,7 @@ public class Receipt {
      
 /**
  * cycles through LineItem array and pulls the productName
+ * returns product name and quantity by string
  */
      private String getProductList(){
          String str = STRING;
@@ -108,6 +113,7 @@ public class Receipt {
 /**
  * adds information to Receipt output such as
  * products in the list, total before discounts, savings, total after discounts
+ * returns accumulated output
  */
      public String getReceipt() {
          

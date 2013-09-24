@@ -15,6 +15,7 @@ public class SaleDiscount implements DiscountStrategy{
     
 /**
  * method to getDiscountRate
+ * return discount rate
  */
     public double getDiscountRate() {
         return discountRate;
@@ -29,6 +30,7 @@ public class SaleDiscount implements DiscountStrategy{
     
 /**
  * method to getDiscountAmt
+ * return unit cost with discount applied * quantity
  */
     public double getDiscountAmt(double unitCost, int qty) {
         return (unitCost * qty)-((getDiscountRate() * unitCost) * qty);
