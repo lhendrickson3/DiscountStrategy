@@ -6,4 +6,6 @@ package discountstrategy;
  */
 public interface TaxStrategy {
     
+        public double getTax();
+        
 }
