@@ -6,9 +6,9 @@ package discountstrategy;
 
 	public class FakeDatabase {
 	    private Customer[] customers = {
-	        new Customer("1", "Dean", "Blue"),
-	        new Customer("2", "Sam", "Green"),
-	        new Customer("3", "Ruby", "Red")
+	        new Customer("1", "Dean", "Blue", new TaxExempt()),
+	        new Customer("2", "Sam", "Green", new WisconsinTax(.05)),
+	        new Customer("3", "Ruby", "Red", new TaxExempt())
 	    };
 
 	    Product[] products = {
@@ -45,5 +45,24 @@ package discountstrategy;
 
 	        return product;
 	    }
+
+    public Customer[] getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(Customer[] customers) {
+        this.customers = customers;
+    }
+
+    public Product[] getProducts() {
+        return products;
+    }
+
+    public void setProducts(Product[] products) {
+        this.products = products;
+    }
+            
+            
+            
 	} 
 

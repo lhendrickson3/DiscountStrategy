@@ -3,10 +3,10 @@ package discountstrategy;
 /**
  * @author lhendrickson
  */
-public class Tax implements TaxStrategy{
+public class WisconsinTax implements TaxStrategy{
     private double tax;
 
-    public Tax(double tax) {
+    public WisconsinTax(double tax) {
         this.tax = tax;
     }
 
@@ -17,4 +17,5 @@ public class Tax implements TaxStrategy{
     public void setTax(double tax) {
         this.tax = tax;
     }
+
 }

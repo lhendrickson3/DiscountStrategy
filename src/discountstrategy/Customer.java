@@ -12,6 +12,8 @@ public class Customer {
         private String firstName;
         private String lastName;
         
+        private TaxStrategy tax;
+        
 /**
  * create final variables to fix magic numbers
  */
@@ -22,10 +24,11 @@ public class Customer {
 /**
  * customer constructor (pass customerId, firstName, and lastName)
  */
-    public Customer(String customerId, String firstName, String lastName) {
+    public Customer(String customerId, String firstName, String lastName, TaxStrategy t) {
         this.customerId = customerId;
         this.firstName = firstName;
         this.lastName = lastName;
+        tax = t;
     }
     
 /**
@@ -88,5 +91,9 @@ public class Customer {
             throw new IllegalArgumentException(ERROR);
         }
         this.lastName = lastName;
+    }
+    
+    public double getTaxToApply(){
+        return tax.getTax();
     }
 }

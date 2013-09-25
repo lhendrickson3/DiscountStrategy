@@ -26,6 +26,7 @@ public class Receipt {
        private static final String FORMAT_BAR = " | ";
        private static final double ZERO_ZERO = 0.0;
        private static final String MINUS = "-";
+       private static final String TAX = "Tax ";
        
 /**
  * constructor (pass customerId)
@@ -88,6 +89,21 @@ public class Receipt {
         return grandDiscountTotal;
     }
      
+     public double getTaxCharge(){
+         double taxCharge = ZERO_ZERO;
+         taxCharge = (customer.getTaxToApply() * getTotalAfterDiscount());
+         return taxCharge;
+     }
+     
+     public double getTotalWithTax(){
+         double grandTotal = ZERO_ZERO;
+         if (customer.getTaxToApply() > 0){
+         grandTotal += getTotalAfterDiscount() + (customer.getTaxToApply()* getTotalAfterDiscount());
+         return grandTotal;
+         } else
+             return getTotalAfterDiscount();
+     }
+     
 /**
  * calculates amount saved
  * returns amount saved by applying discounts
@@ -121,7 +137,9 @@ public class Receipt {
          output += getProductList();
          output += nf.format(getTotalBeforeDiscount()) + NEXT_LINE;
          output += MINUS + nf.format(getSavings()) + NEXT_LINE;
-         output += nf.format(getTotalAfterDiscount());
+         output += nf.format(getTotalAfterDiscount()) + NEXT_LINE;
+         output += TAX + nf.format(getTaxCharge()) + NEXT_LINE;
+         output += nf.format(getTotalWithTax());
          output += NEXT_LINE + NEXT_LINE + COME_AGAIN + customer.getFullName() + EXCLAMATION;
          return output;
          
