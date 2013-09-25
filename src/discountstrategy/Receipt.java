@@ -89,12 +89,21 @@ public class Receipt {
         return grandDiscountTotal;
     }
      
+/**
+ * This method gets the tax amount from total after the discount
+ * @return taxCharge
+ */
      public double getTaxCharge(){
          double taxCharge = ZERO_ZERO;
          taxCharge = (customer.getTaxToApply() * getTotalAfterDiscount());
          return taxCharge;
      }
      
+/**
+ * This method gets the grand total after discounts and tax have been applied
+ * @return grandTotal IF there is a tax to apply
+ * ELSE return calculated total after discount
+ */
      public double getTotalWithTax(){
          double grandTotal = ZERO_ZERO;
          if (customer.getTaxToApply() > 0){

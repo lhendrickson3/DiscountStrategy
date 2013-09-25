@@ -93,6 +93,10 @@ public class Customer {
         this.lastName = lastName;
     }
     
+/**
+ * This method gets tax that will be applied to this customer
+ * @return getTax from TaxStrategy
+ */
     public double getTaxToApply(){
         return tax.getTax();
     }
