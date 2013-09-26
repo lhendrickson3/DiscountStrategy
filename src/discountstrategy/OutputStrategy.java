@@ -6,5 +6,5 @@ package discountstrategy;
  */
 public interface OutputStrategy {
     
-    public String getOutput();
+    public String getOutput(String output);
 }

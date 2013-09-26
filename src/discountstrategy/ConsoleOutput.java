@@ -6,7 +6,7 @@ package discountstrategy;
  */
 public class ConsoleOutput implements OutputStrategy{
     
-        public String getOutput(){
+        public String getOutput(String output){
             System.out.println(output);
         }
 }
