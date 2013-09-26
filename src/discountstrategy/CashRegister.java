@@ -36,7 +36,7 @@ public class CashRegister {
  * method to finalizeSale
  * returns getReceipt from receipt class
  */
-    public String finalizeSale() {
+    public String OutputToConsole() {
         return receipt.getReceipt();
     }
     

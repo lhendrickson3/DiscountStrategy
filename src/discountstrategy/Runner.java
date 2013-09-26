@@ -20,7 +20,7 @@ public class Runner {
 //        // add item, pass prodId and qty
 //        cr.addItemToSale("5", 4);
 //        // finalize sale
-//        System.out.println(cr.finalizeSale());
+//        System.out.println(cr.OutputToConsole());
         
         // start new sale, pass custId
         cr.startNewSale("2");
@@ -29,7 +29,7 @@ public class Runner {
         // add item, pass prodId and qty 
         cr.addItemToSale("3", 1);
         // finalize sale
-        System.out.println(cr.finalizeSale());
+        System.out.println(cr.OutputToConsole());
         
     }
 }
