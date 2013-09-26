@@ -6,6 +6,9 @@ package discountstrategy;
  */
 public interface TaxStrategy {
     
+/**
+ * create getTax universal method for all tax strategies
+ */
         public double getTax();
         
 }
