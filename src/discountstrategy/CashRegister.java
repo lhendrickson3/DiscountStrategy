@@ -9,6 +9,7 @@ public class CashRegister {
  * create variables
  */
     private Receipt receipt;
+    private OutputStrategy os = new GUIOutput();
     
 /**
  * constructor nothing passed
@@ -36,8 +37,9 @@ public class CashRegister {
  * method to finalizeSale
  * returns getReceipt from receipt class
  */
-    public String OutputData() {
-        return receipt.getReceipt();
-    }
+
     
+    public void produceOutput(){
+        os.getOutput(receipt.getReceipt());
+     }
 }

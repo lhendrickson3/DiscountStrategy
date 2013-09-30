@@ -29,7 +29,7 @@ public class Runner {
         // add item, pass prodId and qty 
         cr.addItemToSale("3", 1);
         // finalize sale
-        System.out.println(cr.OutputData());
+        cr.produceOutput();
    
     }
 }

@@ -14,6 +14,7 @@ public class Receipt {
        private LineItem[] lineItem = new LineItem[0]; 
        private FakeDatabase db;
        NumberFormat nf = NumberFormat.getCurrencyInstance();
+
        
 /**
  * create finals to replace magic numbers
@@ -153,6 +154,5 @@ public class Receipt {
          return output;
          
      }
-     
      
 }
