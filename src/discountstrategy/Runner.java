@@ -30,7 +30,6 @@ public class Runner {
         cr.addItemToSale("3", 1);
         // finalize sale
         System.out.println(cr.OutputData());
-        
-        
+   
     }
 }
