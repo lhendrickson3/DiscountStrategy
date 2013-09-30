@@ -10,8 +10,6 @@ public class CashRegister {
  */
     private Receipt receipt;
     
-    private OutputStrategy os;
-    
 /**
  * constructor nothing passed
  */
@@ -39,7 +37,7 @@ public class CashRegister {
  * returns getReceipt from receipt class
  */
     public String OutputData() {
-        return os.getOutput(receipt.getReceipt());
+        return receipt.getReceipt();
     }
     
 }

@@ -10,8 +10,9 @@ import javax.swing.JOptionPane;
  * @author User
  */
 public class GUIOutput implements OutputStrategy{
+    
         
-        public String getOutput(){
-            JOptionPane.showInputDialog(data);
+        public void getOutput(String output){    
+            JOptionPane.showInputDialog(output);
         }
 }
