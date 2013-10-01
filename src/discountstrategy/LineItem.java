@@ -20,9 +20,9 @@ public class LineItem {
 /**
  * constructor (pass productId, quantity, and fake database item)
  */
-    public LineItem(String productId, int qty, FakeDatabase db) {
+    public LineItem(Product product, int qty) {
+        this.product = product;
         this.qty = qty;
-        product = db.findProduct(productId);
     }
      
 /**

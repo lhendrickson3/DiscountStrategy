@@ -50,7 +50,7 @@ public class Receipt {
  * adds an Item to LineItem
  */
     public void addLineItem(String productId, int qty) {
-        LineItem item = new LineItem(productId, qty, db);
+        LineItem item = new LineItem(db.findProduct(productId), qty);
         addToArray(item);
     }
     
@@ -63,6 +63,19 @@ public class Receipt {
         tempItems[lineItem.length] = item;
         lineItem = tempItems;
     }
+    
+         
+/**
+ * cycles through LineItem array and pulls the productName
+ * returns product name and quantity by string
+ */
+     private String getProductList(){
+         String str = STRING;
+         for(int i=0 ; i < lineItem.length; i++){
+             str += lineItem[i].getProductName() + FORMAT_BAR + lineItem[i].getQty() + NEXT_LINE;
+         }
+         return str;
+     }
 
 /**
  * cycles through LineItem array and gathers the total price before discounts 
@@ -123,18 +136,7 @@ public class Receipt {
             savings += (getTotalBeforeDiscount() - getTotalAfterDiscount());
          return savings;
      }
-     
-/**
- * cycles through LineItem array and pulls the productName
- * returns product name and quantity by string
- */
-     private String getProductList(){
-         String str = STRING;
-         for(int i=0 ; i < lineItem.length; i++){
-             str += lineItem[i].getProductName() + FORMAT_BAR + lineItem[i].getQty() + NEXT_LINE;
-         }
-         return str;
-     }
+
      
 /**
  * adds information to Receipt output such as

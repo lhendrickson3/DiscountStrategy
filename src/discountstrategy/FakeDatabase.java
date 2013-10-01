@@ -5,6 +5,7 @@ package discountstrategy;
  */
 
 	public class FakeDatabase {
+            
 	    private Customer[] customers = {
 	        new Customer("1", "Dean", "Blue", new TaxExempt()),
 	        new Customer("2", "Sam", "Green", new WisconsinTax(.05)),
