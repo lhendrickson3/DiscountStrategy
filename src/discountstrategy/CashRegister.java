@@ -9,7 +9,9 @@ public class CashRegister {
  * create variables
  */
     private Receipt receipt;
-    private OutputStrategy os = new GUIOutput();
+    private OutputStrategy output = OutputFactory
+                        .getInstance()
+                        .getOutput(OutputFactory.OutputStrategies.GUI);
     
 /**
  * constructor nothing passed
@@ -18,6 +20,7 @@ public class CashRegister {
    
     }
 
+    
 /**
  * startNewSale starts a new sale (pass customerId)
  * creates new Receipt with customer ID
@@ -40,6 +43,6 @@ public class CashRegister {
 
     
     public void produceOutput(){
-        os.getOutput(receipt.getReceipt());
+        output.getOutput(receipt.getReceipt());
      }
 }
