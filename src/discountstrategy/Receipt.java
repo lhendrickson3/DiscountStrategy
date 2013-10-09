@@ -5,6 +5,8 @@ package discountstrategy;
  */
 
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class Receipt {
  /**
@@ -14,6 +16,11 @@ public class Receipt {
        private LineItem[] lineItem = new LineItem[0]; 
        private FakeDatabase db;
        NumberFormat nf = NumberFormat.getCurrencyInstance();
+       Calendar today = Calendar.getInstance();
+       String format = "M/d/yyy     hh:mm a";
+        SimpleDateFormat sdf = 
+                new SimpleDateFormat(format);
+
 
        
 /**
@@ -136,6 +143,10 @@ public class Receipt {
             savings += (getTotalBeforeDiscount() - getTotalAfterDiscount());
          return savings;
      }
+     
+     public String getTime(){
+         return sdf.format(today.getTime());
+     }
 
      
 /**
@@ -146,6 +157,7 @@ public class Receipt {
      public String getReceipt() {
          
          String output = THANK_YOU + NEXT_LINE + NEXT_LINE;
+         output += getTime() + NEXT_LINE;
          output += getProductList();
          output += nf.format(getTotalBeforeDiscount()) + NEXT_LINE;
          output += MINUS + nf.format(getSavings()) + NEXT_LINE;

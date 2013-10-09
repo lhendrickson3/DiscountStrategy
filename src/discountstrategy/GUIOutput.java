@@ -13,6 +13,6 @@ public class GUIOutput implements OutputStrategy{
     
         
         public void getOutput(String output){    
-            JOptionPane.showInputDialog(output);
+            JOptionPane.showMessageDialog(null, output);
         }
 }
